@@ -6,16 +6,12 @@ object Balance {
 
   def apply(chars: List[Char]): Boolean = {
     def f(c: List[Char], nOpenBraces: Int): Boolean = {
-      if (c.isEmpty) true
+      if (c.isEmpty) nOpenBraces == 0
       else if (nOpenBraces < 0) false
-      else {
-        val n =
-          if (c.head == '(') nOpenBraces + 1
-          else if (c.head == ')') nOpenBraces - 1
-          else nOpenBraces
-
-        if (c.tail.isEmpty) n == 0
-        else f(c.tail, n)
+      else c.head match {
+        case '(' => f(c.tail, nOpenBraces + 1)
+        case ')' => f(c.tail, nOpenBraces - 1)
+        case _   => f(c.tail, nOpenBraces)
       }
     }
 
