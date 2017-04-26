@@ -1,10 +1,9 @@
 package fppscala.recfun
 
-object Balance {
-  def apply(str: String): Boolean =
-    Balance(str.toList)
+object ParenthesesBalancing {
+  def balance(str: String): Boolean = balance(str.toList)
 
-  def apply(chars: List[Char]): Boolean = {
+  def balance(chars: List[Char]): Boolean = {
     def f(c: List[Char], nOpenBraces: Int): Boolean = c match {
       case '(' :: tail => f(tail, nOpenBraces + 1)
       case ')' :: tail => nOpenBraces > 0 && f(tail, nOpenBraces - 1)
