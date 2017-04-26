@@ -1,4 +1,4 @@
-package fppscala.week1
+package fppscala.recfun
 
 object Pascal {
   def apply(c: Int, r: Int): Int = {

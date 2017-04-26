@@ -1,4 +1,4 @@
-package fppscala.week1
+package fppscala.recfun
 
 import org.scalatest._
 

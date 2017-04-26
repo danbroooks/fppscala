@@ -1,4 +1,4 @@
-package fppscala.week1
+package fppscala.recfun
 
 object Balance {
   def apply(str: String): Boolean =

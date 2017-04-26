@@ -1,4 +1,4 @@
-package fppscala.week1
+package fppscala.recfun
 
 object CountingChange {
   def apply(money: Int, coins: List[Int]): Int =
